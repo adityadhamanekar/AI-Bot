@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from .gemini_utility import load_gemini_pro_model
+from .gemini_utility import load_gemini_pro_model , gemini_pro_vision_response
 from .models import ChatMessage
+from PIL import Image
+from io import BytesIO
+
 
 
 # Load Gemini-Pro model
@@ -32,3 +35,20 @@ def chat_view(request):
             return render(request, 'chatbot/index.html',{'all_messages':all_messages })
 
         return render(request, 'chatbot/index.html')
+    
+
+
+   
+def image_captioning(request):
+    if request.method == 'POST':
+        prompt = 'Write a short caption for this image'
+        # image_file = Image.open(r'C:\Users\Dell\Desktop\Django\AIBot\chatbot\static\images\robo.jpg')
+        image_file = request.FILES['image']
+        print(Image.open(image_file))
+       
+        # Call the gemini_pro_vision_response function with the prompt and image bytes
+        caption = gemini_pro_vision_response(prompt, Image.open(image_file))
+
+        return render(request, 'chatbot/image-captioning.html', {'caption': caption})
+    else:
+        return render(request, 'chatbot/image-captioning.html')

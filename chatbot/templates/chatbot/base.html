@@ -40,8 +40,8 @@
       <nav class='nav'>
         <h2>Health-Care </h2>
         <ul>
-          <li>chat-Bot</li>
-          <li>image-Ai</li>
+          <li><a href="/" style="text-decoration: none; color: white">chat-Bot</a></li>
+          <li><a href="/AI/image-captioning" style="text-decoration: none; color: white">image-Ai</a></li>
         </ul>
       </nav>
       
@@ -59,81 +59,13 @@
 
     </div>
 
-    <div class="chat-container">
-
-      
-
-      {% comment %} messages {% endcomment %}
-
-      <div class="messages"  id="message-container">
-
-        {% if user.is_authenticated %}
-         {% for message in all_messages %}
-        <div class="message {% if message.user == request.user %}sent{% else %}received{% endif %}">
-          <div class="message-image">
-            <img src="{% static 'images/user.png' %}" alt="user-image" />
-          </div>
-          <div class="message-text">
-            {% if message.user == request.user %}
-            <strong>You :</strong>
-            {% else %}
-            <strong>{{ message.user.username }}:</strong>
-            {% endif %}
-            {{ message.user_message }}
-          </div>
-        </div>
-        <div class="message">
-          <div class="message-image">
-            <img src="{% static 'images/robo.jpg' %}" alt="bot-image" />
-          </div>
-          <div class="message-text">
-            <strong>Gemini :</strong>
-            <pre><code>{{ message.gemini_response }}</code></pre>
-          </div>
-        </div>
-        {% endfor %}
-    
-{% else %}
-        {% if user_message %}
-        <div class="message ">
-          <div class="message-image">
-            <img src="{% static 'images/favicon.png' %}" alt="user-image" />
-          </div>
-          <div class="message-text">
-            
-            <strong>You : </strong>
-            
-            {{ user_message }}
-          </div>
-        </div>
-
-        <div class="message">
-          <div class="message-image">
-            <img src="{% static 'images/gemini-Ai.webp' %}" alt="bot-image" />
-          </div>
-          <div class="message-text">
-            <strong>Gemini : </strong>
-            <pre><code>{{ gemini_response }}</code></pre>
-          </div>
-        </div>
-        
-        {% endif %}
-   
-{% endif %}
-
-       
-
-      </div>
 
 
+  {% block content %}
 
-      {% comment %} chat_box {% endcomment %}
-      <form class="chat-box" method="post"  >
-        {% csrf_token %}
-        <input type="text" placeholder="Enter your message" class="chat-input" name="user_message" />
-        <button class="chat-send" type="submit">Send</button>
-      </form>
-    </div>
+  
+  {% endblock content %}
+
 
 
     <script>
