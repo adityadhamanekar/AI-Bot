@@ -5,17 +5,17 @@
     <link
       rel="shortcut icon"
       type="png"
-      href="{%static 'Home/icon/favicon.png'%}"
+      href="{%static 'User/icon/favicon.png'%}"
     />
     <title>Login SignUp</title>
     <link
       rel="stylesheet"
       type="text/css"
-      href="{%static 'Home/css/signup.css'%}"
+      href="{%static 'User/css/signup.css'%}"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- It will redirect to the Home Page after submitting the form -->
+    <!-- It will redirect to the User Page after submitting the form -->
     <script>
       function login() {
         location.href = "/user/login/";
@@ -34,9 +34,9 @@
         </button>
       </div>
       <div class="social-icons">
-        <img src="{%static 'Home/icon/fb2.png'%}" />
-        <img src="{%static 'Home/icon/insta2.png'%}" />
-        <img src="{%static 'Home/icon/tt2.png'%}" />
+        <img src="{%static 'User/icon/fb2.png'%}" />
+        <img src="{%static 'User/icon/insta2.png'%}" />
+        <img src="{%static 'User/icon/tt2.png'%}" />
       </div>
 
       <!-- Login Form -->
@@ -48,7 +48,7 @@
       >
         {% csrf_token %}
         <div class="inp">
-          <img src="{%static 'Home/icon/user.png'%}" /><input
+          <img src="{%static 'User/icon/user.png'%}" /><input
             type="text"
             id="email"
             class="input-field"
@@ -59,7 +59,7 @@
           />
         </div>
         <div class="inp">
-          <img src="{%static 'Home/icon/password.png'%}" /><input
+          <img src="{%static 'User/icon/password.png'%}" /><input
             type="email"
             id="email"
             name="email"
@@ -70,7 +70,7 @@
           />
         </div>
         <div class="inp">
-          <img src="{%static 'Home/icon/password.png'%}" /><input
+          <img src="{%static 'User/icon/password.png'%}" /><input
             type="password"
             id="password"
             name="password"

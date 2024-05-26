@@ -5,18 +5,18 @@
     <link
       rel="shortcut icon"
       type="png"
-      href="{%static 'Home/icon/favicon.png'%}"
+      href="{%static 'User/icon/favicon.png'%}"
     />
     <title>Login SignUp</title>
     <link
       rel="stylesheet"
       type="text/css"
-      href="{%static 'Home/css/loginStyle.css'%}"
+      href="{%static 'User/css/loginStyle.css'%}"
     />
-    <script src="{%static 'Home/js/script.js'%}"></script>
+    <script src="{%static 'User/js/script.js'%}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- It will redirect to the Home Page after submitting the form -->
+    <!-- It will redirect to the User Page after submitting the form -->
     <script>
       function signup() {
         location.href = "/user/signup/";
@@ -41,9 +41,9 @@
         </button>
       </div>
       <div class="social-icons">
-        <img src="{%static 'Home/icon/fb2.png'%}" />
-        <img src="{%static 'Home/icon/insta2.png'%}" />
-        <img src="{%static 'Home/icon/tt2.png'%}" />
+        <img src="{%static 'User/icon/fb2.png'%}" />
+        <img src="{%static 'User/icon/insta2.png'%}" />
+        <img src="{%static 'User/icon/tt2.png'%}" />
       </div>
 
       <!-- Login Form -->
@@ -55,7 +55,7 @@
       >
         {% csrf_token %}
         <div class="inp">
-          <img src="{%static 'Home/icon/user.png'%}" /><input
+          <img src="{%static 'User/icon/user.png'%}" /><input
             type="text"
             name="username"
             id="email"
@@ -67,7 +67,7 @@
         </div>
 
         <div class="inp">
-          <img src="{%static 'Home/icon/password.png'%}" /><input
+          <img src="{%static 'User/icon/password.png'%}" /><input
             type="password"
             id="password"
             name="password"
@@ -86,7 +86,7 @@
           <h3>or</h3>
         </div>
         <button class="connect" onclick="google()">
-          <img src="{%static 'Home/icon/google.png'%}" /><span
+          <img src="{%static 'User/icon/google.png'%}" /><span
             >Sign in with Google</span
           >
         </button>
